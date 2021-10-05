@@ -5,6 +5,7 @@ let fourthColumn = document.getElementById("column4");
 let fifthColumn = document.getElementById("column5");
 let sixthColumn = document.getElementById("column6");
 let seventhColumn = document.getElementById("column7");
+let gameOver = document.getElementById("game")
 
 let boardLayout = [
   [null, null, null, null, null, null, null],
@@ -158,6 +159,7 @@ function dropChip(column) {
       currentColumn.childNodes[2 * targetRow + 1].className = "red-chip";
       boardLayout[targetRow][targetColumn] = currentPlayer;
       if (analyzeBoard(boardLayout)) {
+        gameOver.classList.add("show")
         let result = document.querySelector(".result");
         result.textContent = "Player 1 wins!";
       } else {
@@ -169,9 +171,11 @@ function dropChip(column) {
       currentColumn.childNodes[2 * targetRow + 1].className = "black-chip";
       boardLayout[targetRow][targetColumn] = currentPlayer;
       if (analyzeBoard(boardLayout)) {
+        gameOver.classList.add("show")
         let result = document.querySelector(".result");
         result.textContent = "Player 2 wins!";
       } else if (checkIfTie(boardLayout)) {
+        gameOver.classList.add("show")
         let result = document.querySelector(".result");
         result.textContent = "Its a tie!";
       } else {
@@ -202,5 +206,13 @@ sixthColumn.addEventListener("click", function () {
 seventhColumn.addEventListener("click", function () {
   dropChip(7);
 });
+
+
+function reset() {
+  startGame()
+  gameOver.classList.remove("show")
+}
+
+
 
 
