@@ -1,0 +1,50 @@
+h1 {
+  color: blue;
+  text-align: center;
+}
+
+.result {
+  color: black;
+}
+
+.game-board {
+  border: 1px solid black;
+  background-color: blue;
+  height: 480px;
+  width: 575px;
+  display: flex;
+  margin: auto;
+}
+
+.slots {
+  border: 1px solid black;
+  height: 78px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.red-chip {
+  background-color: red;
+  height: 78px;
+  width: 80px;
+  border-radius: 50%;
+  margin: auto;
+  color: white;
+  text-align: center;
+}
+
+.black-chip {
+  background-color: black;
+  height: 78px;
+  width: 80px;
+  border-radius: 50%;
+  margin: auto;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
